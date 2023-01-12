@@ -1,0 +1,168 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+
+		<script type="text/javascript">
+
+			function While1(){
+				var aNumber = 1; 
+				var bNumber = 5;
+			//WHILE aNumber is less than bNumber, run this code
+				while (aNumber < bNumber) { //As long as the statement is true, keep displaying this alert
+
+					alert("aNumber is worth less than bNumber. aNumber is worth " + aNumber + " and bNumber is " + bNumber + ".");
+
+					aNumber ++; // Without this, the while statement becomes true forever creating an infinite loop. This code allows aNumber to increase in value every loop which eventually  breaks the while statement
+				}
+				alert("Congratulations. This is the end of the loop aNumber is now equal to NOT LESS than bNumber.")
+			}
+
+			function While2(){
+				var food = ["Fish", "Pancakes", "Eggs", "Toasties", "Pumpkin spice latte"]
+				var x = 0 //First value on index
+				var text = "Today's special is "
+
+				while (food[x]) { //It will go through all the array's values as x increments through the index
+					alert(text += food[x] + ".")
+					x++
+				}
+			}
+
+			const suit = ['diamond', 'spade', 'heart', 'club'];
+			let currentCard
+			let count = 0
+			function cards(){
+				while (currentCard !== 'spade'){
+  				currentCard = suit[Math.floor(Math.random() * 4)]
+				count++
+  				alert('Loop ' + count + ': ' + currentCard)
+				}
+			}
+
+			function doWhile1(){
+				var aNumber = 2; 
+				var aNumber = 0; //Resetting the value to 0
+
+				do{
+					alert("aNumber is : "+ aNumber); //DO this
+					aNumber ++; 
+				} while (aNumber < bNumber) //WHILE this is true. The loop is only performed once.
+			}
+
+			function doWhile2(){
+				formField1 = "";
+				do {
+					alert("The form has not been fully completed");//Do this if field 1 of the form is not complete
+				}	
+				while (formField1 = "");
+			}
+
+			function For(){
+				for (aNumber = 1, bNumber = 5; aNumber < bNumber; aNumber++) { //ARGUMENTS ARE SEPERATED BY ;
+					alert("aNumber is worth " + aNumber) //For every time the above statemenbt is true, do this
+				}
+			alert("aNumber is now worth " + aNumber + " so it is not less than bNumber " + "(" +bNumber +").")
+			}
+
+			function ForArray(){
+			const animals = ['Grizzly Bears', 'Sloths', 'Sea Lions'];
+				for (let i = 0; i < animals.length; i++){
+ 				alert('I like ' + animals[i]);
+				}
+			}
+			function nestedArray(){
+			const myArray = [6, 19, 20];
+			const yourArray = [19, 81, 2];
+				for (let i = 0; i < myArray.length; i++) {
+  				for (let j = 0; j < yourArray.length; j++) {
+    				if (myArray[i] === yourArray[j]) {
+      				alert('Both arrays have the number: ' + yourArray[j]);
+    				}
+  				}
+				}
+			}
+
+			function arrayLoop(){
+			let bobsFollowers = ['Joe', 'Marta', 'Sam', 'Erin']; // Declaring the followers
+			let tinasFollowers = ['Sam', 'Marta', 'Elle'];
+			let mutualFollowers = []; // This is empty so information can be added and printed later
+
+			for (let i = 0; i < bobsFollowers.length; i++) { //Each iteration goes through the array
+  			for (let j = 0; j < tinasFollowers.length; j++) {
+    			if (bobsFollowers[i] === tinasFollowers[j]) {
+      			mutualFollowers.push(bobsFollowers[i]); // If there is a match ^^ "push" it into mutualFollowers
+    			}
+  				}
+			};
+			console.log(mutualFollowers)	
+			}
+
+			function Break(){
+				for (x = 3; x < 10 ; x += 3){
+					if (x == 9) {break} //If x ever hits 9, break the loop
+					alert("x is " + x)
+				}
+			}
+
+			function Continue(){
+				for (a = 5; a < 20 ; a += 5){
+					if (a == 10) {continue} //Skip this loop's iteration if it is true
+					alert("a is " + a)
+				}
+			}
+		</script>
+
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Loops</h1>
+	</header>
+	<body>
+		<Main>
+			<h2>While loops</h2>
+			<p>While loops check a condition before excecuting. They can loop forever and cannot be escaped if the condition is always true.</p>
+			<input type="submit" id="submit" value="A While loop with numbers" onclick="While1()">
+			<input type="submit" id="submit" value="A While loop with strings" onclick="While2()">
+			<input type="submit" id="submit" value="You're playing cards and have spades. Deal cards until we get another" onclick="cards()">
+			
+
+			<h2>Do While loops</h2>
+			<p>Do while loops are only performed ONCE.</p>
+			<input type="submit" id="submit" value="A Do While loop" onclick="doWhile1()">
+			<input type="submit" id="submit" value="A real world example (A form hasn't been completed)" onclick="doWhile2()">
+
+			<h2>For loops</h2>
+			<p>They are executed on a certain number of times depending on a variable number.</p>
+			<input type="submit" id="submit" value="A For Loop" onclick="For()">
+			<input type="submit" id="submit" value="Using a For loop on an array" onclick="ForArray()">
+			<input type="submit" id="submit" value="And in a nested array" onclick="nestedArray()">
+			<input type="submit" id="submit" value="Tina & Bob both have instagram followers. A function has been created to see what mutual followers they have." onclick="arrayLoop()">
+
+			<h2>Modifying loops</h2>
+
+			<h3>Break</h3>
+			<p>This special word terminates the loop as soon as it is triggered</p>
+			<input type="submit" id="submit" value="Breaking the loop" onclick="Break()">
+
+			<h3>Continue</h3>
+			<p>This will skip the loops current iteration and bounce bach to the loop to start the next one.</p>
+			<input type="submit" id="submit" value="Continue the loop" onclick="Continue()">
+
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

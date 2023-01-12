@@ -1,0 +1,102 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Javascript and Console</h1>
+	</header>
+	<body>
+		<Main>
+			<h2>If statements</h2>
+			<h3>If else statements</h3>
+			<p><span class="code">let hungerLevel = 7<br>
+				if(hungerLevel >=7){<br>
+				  	console.log('Time to eat!')<br>
+				}else{<br>
+				  	console.log('We can eat later!')<br>
+				}</span><br>
+			If hungerlevel is higher or equal to 7, it is time to eat. Otherwise we can eat later.</p>
+
+			<h3>Logical if else statements</h3>
+			<p><span class="code">let mood = 'sleepy';<br>
+				let tirednessLevel = 6;<br>
+				if (mood==='sleepy' && tirednessLevel > 8){<br>
+				  	console.log("It's time to sleep")<br>
+				} else{<br>
+				  	console.log("It's not bed time yet")<br>
+				}</span><br>
+			If mood EQUALS sleepy AND tiredness level is MORE THAN 8 then it is time to sleep.<br>
+			<span class="code"> || </span> (pipe character) can replace <span class="code"> && </span> to create a new If statement:<br>
+			If mood EQUALS sleepy <strong>OR</strong> tiredness level is MORE THAN 8 then it is time to sleep.</p>
+
+			<h3>Truthy and Falsy</h3>
+			<p><span class="code">let numberOfApples = 0;<br>
+				if (numberOfApples){<br>
+				   console.log('Let us eat apples!');</span> As long as there are apples (more than 1 is true), we can eat apples!<br>
+				<span class="code">} else {<br>
+				   console.log('No apples left!');<br>
+				}</span></p>
+			
+			<p><span class="code">let tool = '';<br>
+				let writingUtensil = tool || 'pen'<br>
+				console.log(`The ${writingUtensil} is mightier than the sword.`);<br></span>
+				Tool is empty so it has no value. Since the console.log is asking for a value, writingUtensil has been given a default value of pen, filling the condition.</p>
+					
+			<h3>Shorthand coding if else with a ternary operator</h3>
+			<p><span class="code">
+				hungerLevel >=7 ? console.log('Time to eat!') : console.log('We can eat later!')<br>
+				mood==='sleepy' && tirednessLevel > 8 ? console.log("It's time to sleep"): console.log("It's not bed time yet")<br>
+				numberOfApples ? console.log('Let us eat apples!') : console.log('No apples left!')</span><br><br>
+				
+				The above examples have been re-written to use the ternary operator instead of the if statements.<br>
+				The is condition provided before the ?.<br>
+				Two expressions follow the ? and are separated by a colon :.<br>
+				If the condition evaluates to true, the first expression executes.<br>
+				If the condition evaluates to false, the second expression executes.</p>
+
+			<h3>Else if statements</h3>
+			<p><span class="code">let trafficLight = 'amber';</span> The value for traffic light has been set<br>
+				<span class="code">if (trafficLight === 'red') {<br>
+				  	console.log('Stop!');</span> If trafficLight is red, say "Stop!"<br>
+					<span class="code">} else if (trafficLight === 'amber') {<br>
+				  	console.log('Slow down.');</span> If trafficLight is amber, say "Slow down."<br>
+					<span class="code">} else if (trafficLight === 'green') {<br>
+				  	console.log('Go!');</span> If trafficLight is green, say "Go!"<br>
+					<span class="code">} else {<br>
+				  	console.log('TRAFFIC LIGHT BROKE!!!');<br>
+					}</span> If all else if statements fail the last else statement will be printed.</p>
+
+			<h3>Switch statements</h3>
+			<p><span class="code">let athleteFinalPosition = 'first place';<br>
+					switch (athleteFinalPosition){<br>
+				  	case 'first place':<br>
+				  	console.log('You get the gold medal!');<br>
+				  	break;<br>
+				  	case 'second place':<br>
+				  	console.log('You get the silver medal!');<br>
+				  	break;<br>
+				  	case 'third place':<br>
+				  	console.log('You get the bronze medal!');<br>
+				  	break;
+					} default: ''<br>
+					console.log('No medal awarded.');<br>
+					break;</span> In each statement we are checking to see if it fits the athleteFinalPosition value. If it does, it's string will be printed. A default message will be printed if none of the criteria are met.</p>
+			</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

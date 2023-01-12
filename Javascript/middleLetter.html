@@ -1,0 +1,83 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			table{
+				font-size:200%;
+				border: .1em solid black;
+				border-collapse: collapse;
+			}
+			td{
+				border: .01em solid black;
+				padding: .3em;
+				width: 2em;
+				height: 2em;
+				text-align: center;
+			}
+		</style>
+		<script>
+			function play(){
+				input = prompt("Give me a word / sentence and I will give you the middle letter.")
+				var alphaExp = /^[a-zA-Z]+$/;
+           		if(input.match(alphaExp)) { //The first if else statement ensures tha the input only contains letters
+					
+					if (Number.isInteger(input.length/2)){ // if the input is even, the standoff commences
+
+				} 	else {
+						answer = Math.floor(input.length / 2) // if the input is odd, the middle letter is simply calculated and printed
+						console.log(input[answer].toUpperCase()) //The array works off a 0 point index. If we have 7, we get 3.5 rounded down to 3 but 3 is what we want as it will actually be the 4th item.
+						alert('The middle letter of "'+ input + '" is "' + input[answer].toUpperCase() + '"')
+            	}
+			}	else {
+					alert("Please enter only letters");
+            	}				
+			}
+		</script>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>My middle letter game</h1>
+	</header>
+	<body>
+		<Main>
+			<p>When I was young, I somehow decided that spelling was fun and I made up my own game with it. I attribute this game to my good spelling! It's not really a game since you just do it by yourself and there's no prize. The rule's are simple, think of a word or a sentence and find the middle letter of the chosen word / sentence.</p>
+			<p>For an easy example: <ul><li>"Silly", you get the first L.</li><li>"Christmas", the first S.</li><li>"Abnormality", you get M.</li><li>"This is a long sentence", gets you the N from long.</li></ul> </p>
+			<p>Now this is rather simple to do. But what happens if the word or sentence has an even number of characters? How do you find out the middle letter of Kangaroo? The G and second A are both competing for that middle place. This is where it gets fun!</p>
+			<p>Each letter's pronounciation can be visualised with three letters. The letter itself will either start OR end the visualisation. The middle letter is decided on when that letter within its own visualisation is at the centre of the two letters' visualisation when the other is absent.</p>
+
+			<table>
+				<tr><td>Ayy</td><td>Bee</td><td>Cee</td><td>Dee</td><td>Eey</td><td>efF</td></tr>
+				<tr><td>Gee</td><td>acH</td><td>Iey</td><td>Jay</td><td>Kay</td><td>elL</td></tr>
+				<tr><td>emM</td><td>enN</td><td>Ohh</td><td>Pee</td><td>Que</td><td>arR</td></tr>
+				<tr><td>esS</td><td>Tee</td><td>yoU</td><td>Vee</td><td>yuW</td><td>ehX</td></tr>
+				<tr><td>whY</td><td>Zed</td></tr>
+				<tr></tr>
+			</table>
+			<p>For example, if we're using "Kangaroo", the G and A are now competing. We can visualise this as "Gee Ayy". Gee has the G at the start and so does A. Since A is at the centre between the visualisation, A wins.</p>
+			<p>But what if both letters are or are not at the centre? For "Window", N and D ("enN Dee" creates a stalemate between the two but this is where the remainder of the visualisation comes in. The visualisation is now replaced by the letters visualisation on the opposite side. <br>So now instead of N and D, it is now E and E. N vs D (<strong>e</strong>nN vs De<strong>e</strong> becomes <strong>e</strong> vs <strong>e</strong>). If we visualise this match, we have Eey vs Eey, the second E reaches the centre, the second E is the child of D so D is crowned the winner!</p>
+			<ol>Let's watch that in slow mo:
+				<li>Window - enN vs Dee</li>
+				<li>Opposites are used - Eey vs <strong>E</strong>ey</li>
+				<li>The E corresponding to D has done it.</li>
+			</ol>
+
+			<p>If the opposites do not decide a winner, the process repeats until one does.</p>
+
+			<input type="button" onclick="play()" value="Click me to get started.">
+
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

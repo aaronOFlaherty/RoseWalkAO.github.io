@@ -1,0 +1,56 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+		</style>
+		<script>
+		function whale(){
+			input = prompt("What would you like to say in Whale?")
+			const vowels = ['a','e','i','o','u']
+			let resultArray = []
+			for (let inputIndex = 0 ; inputIndex < input.length; inputIndex++){
+			  if(input[inputIndex] === 'e'){
+			    resultArray.push(input[inputIndex])
+			  }
+			  if(input[inputIndex] === 'u'){
+			    resultArray.push(input[inputIndex])
+			  }
+ 			 for(let vowelIndex = 0; vowelIndex < vowels.length; vowelIndex++){
+			    if(input[inputIndex] === vowels[vowelIndex]){
+			      resultArray.push(input[inputIndex]);
+			    }
+ 				}
+			}
+			const resultString = resultArray.join('').toUpperCase();
+			console.log(resultArray)
+			alert(resultString)
+		}
+		</script>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Speak like a whale!</h1>
+	</header>
+	<body>
+		<Main>
+			<p>There are a few simple rules for translating text to whale language.<br>
+				There are no consonants. Only vowels excluding “y”. The u‘s and e‘s are extra long, so they will be doubled.</p>
+			
+			<h2>Input your whale talk here!</h2>
+			<input type="submit" value="Start" onclick="whale()">
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

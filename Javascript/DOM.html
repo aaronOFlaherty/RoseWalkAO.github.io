@@ -1,0 +1,101 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			img{
+				width: 100%;
+			}
+		</style>
+
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>The Document Object Model</h1>
+	</header>
+	<body>
+		<Main>
+			<h2>What is the DOM?</h2>
+			<p>Javascript does not exist in a vacuum. It is performed and attached to HTML web pages. The web page must be reached to get information and that page will need to respond to the code to create the interactivity.<br>
+			Document is the webpage itself, Object refers to the objects that are created based on the HTML's structure and Model is the way to approach various objects.</p>
+			<img src = "../Media/DOM.jpg" class = "DOMTest">
+			<p>The HTML DOM is a standard for how to get, change, add or delete HTML elements. DOM methods are actions used to perform on HTML elements. DOM properties are values we can set or change. All HTML elements are defiend as objects and are accessible through javascript. A property is a value we can retrieve or modify (adding or deleting).</p>
+			
+			<p>In this page's HTML, the script tags are at the bottom of the page since they will take effect after the HTML elements have been loaded. Otherwise JS will attempt to target objects which don't yet exist.</p>
+
+			<h2 class = "DOMTest">Accessing the DOM</h2>
+			<p class = "DOMTest">This whole section has been given the class "DomTest". By checking the console log, we can see that javascript has targeted this entire class.</p>
+
+			<p class = "DOMTest">We have a few options in finding an HTML's elements: <strong>(CASE SENSITIVE)</strong><br>
+			<ul class = "DOMTest">
+				<li>ID - document.getElementsById("")</li>
+				<li>Tag - document.getElementsByTag Name("")</li>
+				<li>Class - document.getElementsByClassName("")</li>
+				<li>CSS selector - document.querySelectorAll("")</li>
+			</ul>
+			If we check the console log (F12), we can see a few examples.</p>
+
+			<h2 id="title">I am the original title that you wont see :)</h2> <!--Changed with JS-->
+			
+			<h3 >Changing DOM elements </h3>
+			<p id = "alignMe">To change an element, we need the name of the property we're modifying and the new value.</p>
+
+			<p id ="white">To change the background colour, the property is backgroundColor and the value is white</p>
+
+			<p id="fontFamily">My original text style would be uniform to the rest of the page but JS has changed that.</p>
+			
+			<h3>Creating elements with DOM</h3>
+			
+			<p id="creating">The innerHTML property is a way of adding content to the page but it can come with a chance of errors to occur. Instead, we can create elements within the DOM and then add the element to right place on the page.</p>
+			
+			<ol id="listTest"><strong>This list has been written in HTML</strong>
+				<li>And this is a list item written in HTML</li>
+			</ol>
+		</Main>
+	</body>
+	<script>
+		var classTest = document.getElementsByClassName("DOMTest")
+		console.log("Here is the elements of the 'Accessing DOM elements' section.", classTest)
+
+		var anchorTest = document.getElementsByTagName("a")
+		console.log("Here are all of the anchor tags.", anchorTest)
+		console.log(anchorTest.length)
+
+		var CSSTest = document.querySelectorAll("h2")
+		console.log("CSS Selector", CSSTest)
+
+		document.getElementById("alignMe").setAttribute("align","right");
+
+		console.log("Here we have edited the text to 'Accessing DOM section'")
+		document.getElementById("title").innerHTML="Making changes with DOM"
+
+		document.getElementById("white").style.backgroundColor="white" //CAMELCASE AND NO - 
+
+		document.getElementById("fontFamily").style.fontFamily="fantasy"//CAMELCASE AND NO - 
+
+		var newPara = document.createElement("p");
+		var paraText = document.createTextNode("This new paragraph has been created in JS and appeneded to the above paragraph. I have created a new p element and appended this text to it. Then this whole section is appended to a new object which is targeted by the above paragraph's ID.")
+		newPara.appendChild(paraText)
+		var creatingElements = document.getElementById("creating")
+		creatingElements.appendChild(newPara)
+		
+		var listAddOn = document.createElement("li"); //creating a list item element
+		var listText = document.createTextNode("And I have been written in JS"); // The text to add
+		listAddOn.appendChild(listText); //Appending the text onto the list item element
+		var listTest = document.getElementById("listTest");
+		listTest.appendChild(listAddOn); //Appending the list item which has the text node already appended
+
+	</script>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

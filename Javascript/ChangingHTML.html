@@ -1,0 +1,113 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			img{
+				width: 50%
+			}	
+			.testClass{
+				background-color: cyan;
+			}
+			h2{
+			text-decoration:underline;
+            }
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Changing HTML content</h1>
+	</header>
+	<body>
+		<main>
+			<h2>Changing text</h2>
+			<p id="changingHTML" style="background-color:blueviolet; color:yellow; font-size: 25pt;">Hello! I have been written in HTML.</p>
+
+			<h3>Targeting text</h3>
+			
+			<button type="button" onclick = 'document.getElementById("changingHTML").innerHTML = "Now I have been edited by Javascript."'>
+			The above sentence is contained within a span tag with an ID. On click, this button is getting the ID, targeting the inner HTML and changing it to the chosen sentence within the button tag.</button>
+			<button type="button" onclick = 'document.getElementById("changingHTML").innerHTML = "Hello! I have been written in HTML."'>
+			Reset text.</button>
+				
+			<h3>Targeting style</h3>
+			<button type="button" onclick="changestyle1()">This button is targeting the same ID as the above but it's function is different. It is now targeting the style.</button>
+			<button type="button" onclick="changestyle2()">Reset style.</button>
+			<script>
+				function changestyle1() {
+					var x = document.getElementById("changingHTML");
+					x.style.backgroundColor="white" // CAMELCASE WRITING FOR CSS
+					x.style.color="red"
+					x.style.fontFamily="Times New Roman" // DASHES '-' ARE NOT USED WHEN TARGETING CSS THROUGH JS
+				}
+			
+				function changestyle2() {
+					var x = document.getElementById("changingHTML");
+						x.style.backgroundColor="blueviolet"
+						x.style.color="yellow"
+						x.style.fontFamily="Calibri"
+						x.style.fontSize="25pt"
+				}
+			</script>
+
+			<br><br><button onclick='changeColour()'>Click me to recolour the page!</button>
+			<script>
+	 			 function getRandomColour(){
+					let letters = '0123456789ABCDEF';
+					let color = '#';
+					for (let i = 0; i < 6; i++) {
+					  color += letters[Math.floor(Math.random() * 16)];
+					}
+					return color;
+				  }
+				  function changeColour(){
+					let newColor = getRandomColour();
+					document.body.style.backgroundColor = newColor; 
+				  }
+ 			 </script>
+
+			<h2>Changing images</h2>
+			<img src="../Media/C&B.jpg" id="dogs" onclick="changeimage()">
+			<script> 
+				function changeimage() 	{
+					var image = document.getElementById("dogs");
+					if(image.src.match("B&C")){
+						image.src="../Media/C&B.jpg";}
+						else {
+							image.src="../Media/B&C.gif";
+					}
+					alert("Good boys")	}
+			</script>
+			
+			<p>The default image here has been given an ID and an 'onclick' function. The onclick function has been written in HTML inside the script tag. The function says, IF this image (targeted by its ID) does not match this file, run this code and display this image.</p>
+			
+			<div id = "testID" class = "testClass">
+				<h2>Changing classes</h2>
+				<button type="button"
+				onclick = "changeclass()">This section has been put in a div tag with a class. This button has been given a function to remove the div's "classname" and add the class if one is not there. "Within this ID, if this item has this class, remove it. If this item does not have a class, give it one." This process is repeated for every click.</button>					
+			</div>
+			<script>
+				function changeclass() {
+					const element = document.getElementById("testID");
+					if (element.className == "testClass") {
+						element.className = ""
+					} else {
+						element.className = "testClass";
+					}
+				}
+			</script>
+		</main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			td {
+				border: .1em solid black;
+				width: 150px;
+			}
+			table{
+				border: .2em solid black;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Iterators</h1>
+	</header>
+	<body>
+		<Main>
+			<p>The built-in JavaScript array methods that help us iterate are called iteration methods, at times referred to as iterators. Iterators are methods called on arrays to manipulate elements and return values.</p>
+
+			<h2>.forEach()</h2>
+			<p>This method will execute code for each element contained within an array</p>
+			<input type="submit" value="Log my favourite movies of 2022" onclick="forEach()">
+			<p><span class='code'>movies.forEach(movie => { console.log(`I really liked ${movie}`)})}</span> forEach() is a built in method of JavaScript and loops through the array to execute it's code.</p>
+			<script>
+				function forEach(){
+					const movies = ['Top Gun: Maverick', 'Prey', 'The Batman'];
+					movies.forEach(movie => { console.log(`I really liked ${movie}`)});
+				};				
+			</script>
+
+			<h2>.map()</h2>
+			<p>When .map() is called on an array, it takes an argument of a callback function and returns a new array.</p>
+			<input type="submit" value="Click to display a secret message" onclick="mapSecret()">
+			<p><span class='code'>const secretMessage = secretCode.map(decodedMessage => decodedMessage[0])</span> The map function will give a new array but in this case it is designated to only give back the first letter [0 point index] of the element.</p>
+			<script>
+				function mapSecret(){
+					const secretCode = ['Green', 'Ukraine', 'Infiltration', 'Neanderthal', 'Elf', 'Antique', 'Pig', 'Intelligent', 'Giant'];
+					const secretMessage = secretCode.map(decodedMessage => decodedMessage[0]);
+					console.log('The code is: ' + secretCode.join(' '));
+					console.log('The message is: ' + secretMessage.join(' ')); //join(' ') only adds a space for readability
+				};
+			</script>
+			<input type="submit" value="Click here for some maths" onclick="mapCubed()">
+			<p><span class='code'>const cubedNum = numbers.map(maths => maths * maths * maths)</span> map is now returning each element that has been multiplied by itself!</p>
+			<script>
+				function mapCubed(){
+					const numbers = [6, 2, 10, 7, 5, 748946];
+					const cubedNum = numbers.map(maths => maths * maths * maths); //The equation for cubing a number
+					console.log("Original number choice: " + numbers.join(' '));
+					console.log("Numbers cubed: " + cubedNum.join(' '));
+				};
+			</script>
+
+			<h2>.filter()</h2>
+			<p>Similar to the map method, filter returns an array once it has filtered out elements based on a condition. Those that meet the condition are given a value of true and returned. Those that don't are considered false and it continues.</p>
+			<input type="submit" value="I will tell you which sentence has more than 50 characters" onclick="filterSentence()">
+			<p><span class='code'>const longSentenceFinder = sentences.filter(long => { return long.length > 50 })</span> Only sentences in the array that are longer than 50 are true and those are returned and logged</p>
+			<script>
+				function filterSentence(){
+					const sentences = ['Today I went to the shop and bought a gallon of milk', 'Yesterday I went for a jog in a new area in town.', 'Someday I would like to holiday in Jamaica and Hawaii', 'I really like using my showerhead as a microphone']
+					const longSentenceFinder = sentences.filter(long => {
+						return long.length > 50;
+					})
+					console.log('My original sentences: ' + sentences); //Concatenated
+					console.log(`Sentences with more than 50 characters: ${longSentenceFinder}`); //Interpolated
+					return sentences
+				};
+			</script>
+
+			<h2>.findIndex()</h2>
+			<p>Quite simply, findIndex gives you the elements position with an array! If there is no true arguments within the array, it will return -1.</p>
+			<input type="submit" value="In all of the numbers within this array, I will point out where to find 356" onclick="find356()">
+			<p><span class='code'>const found356 = numbers.findIndex(find356 => {return find356 === 356})</span></p>
+			<script>
+				function find356(){
+					const numbers = [543, 512, 864, 223, 301, 356, 444, 121]
+					const found356 = numbers.findIndex(find356 => {
+						return find356 === 356}
+					)
+					console.log(found356)
+				}
+			</script>
+			<input type="submit" value="I will display the first number which starts with 3" onclick="find3Starter()">
+			<p><span class='code'>const found3Starter = find3Starter.findIndex(starter3 => {return starter3[0] == 3})</span> Find the first element that has 3 as their individual 0 point index. In this example, we cannot find the first digit of the integer. The function will only return the element which starts with 3 as a string. If integers are used, teh result will be -1.</p>
+			<script>
+				function find3Starter(){
+					const find3Starter = ['543', '512', '864', '223', '301', '356', '444', '121',]
+					const found3Starter = find3Starter.findIndex(starter3 => {
+						return starter3[0] == 3 //Only using two =
+					})
+					console.log(found3Starter)
+				}
+			</script>
+
+			<h2>.reduce()</h2>
+			<p>This method will reduce (obviously) by only returning a single value.</p>
+			<input type="submit" value="This will go through each iteration, return the final value and go again until all elements are used" onclick="reduce()">
+			<p><span class='code'>const newSum = newNumbers.reduce(function(accumulator, currentValue) {console.log('The value of accumulator: ', accumulator); console.log('The value of currentValue: ', currentValue); return accumulator+currentValue });</span> Iteration starts with the first element in the array. The second starts with the total returned after the first. Then third and so on.</p>
+			<table>
+				<tr>
+					<td>Iteration</td>
+					<td>accumulator</td>
+					<td>currentValue</td>
+					<td>returned (value)</td>
+				</tr>
+				<tr>
+					<td>First</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Second</td>
+					<td>3</td>
+					<td>4</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Third</td>
+					<td>7</td>
+					<td>10</td>
+					<td>17</td>
+				</tr>
+			</table>
+			<script>
+				function reduce(){
+					const newNumbers = [1, 3, 5, 7];
+					const newSum = newNumbers.reduce(function(accumulator, currentValue) {
+  					console.log('The value of accumulator: ', accumulator);
+  					console.log('The value of currentValue: ', currentValue);
+  					return accumulator+currentValue
+					});
+					console.log(newSum)
+				}
+			</script>
+
+			<p>The reduce method can take a second argument where it can use a number as an initial value to go off. This example will be newSum but it can be another number. By doing this, a new iteration will be created.</p>
+			<input type="submit" value="I will reduce the array but with an initial value" onclick="reduceSecondArgument()">
+			<p>The same numbers have been used but now that there is an initial value to use, another iteration is introduced so an extra result is logged. Here, the second argument's value is 10.</p>
+			<table>
+				<tr>
+					<td>Iteration</td>
+					<td>accumulator</td>
+					<td>currentValue</td>
+					<td>returned (value)</td>
+				</tr>
+				<tr>
+					<td>First</td>
+					<td>SECOND ARGUMENT</td>
+					<td>1</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>Second</td>
+					<td>11</td>
+					<td>3</td>
+					<td>14</td>
+				</tr>
+				<tr>
+					<td>Third</td>
+					<td>14</td>
+					<td>5</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>Fourth</td>
+					<td>19</td>
+					<td>7</td>
+					<td>26</td>
+				</tr>
+			</table>
+			<script>
+				initialValue = 5 * 2
+
+				function reduceSecondArgument(){
+					const newNumbers = [1, 3, 5, 7];
+					const newSum = newNumbers.reduce(function(accumulator, currentValue) {
+  					console.log('The value of accumulator: ', accumulator);
+  					console.log('The value of currentValue: ', currentValue);
+  					return accumulator+currentValue
+					}, initialValue);//the second argument for an initial value
+					console.log(newSum)
+				}
+			</script>
+
+			<h2>.some() and .every()</h2>
+			<p>This runs through an array and checks if the elements passes a test. Once one element passes, the function stops and returns a true result. If they all fail, we get a false value.</p>
+			<input type="submit" value="Are some numbers in my array below 100?" onclick="some()">
+			<p><span class='code'>function some(){ const someNumbers = [102, 103, 99, 104]; console.log(someNumbers.some((below100) => { return below100 < 100; }));}</span> Since at least SOME of the elements evaluate to a true result that's what we get. In reality, it only ran up to 99, found a true result and stopped.</p>
+			<script>
+				function some(){
+					const someNumbers = [102, 103, 99, 104];
+					console.log(someNumbers.some((below100) => {
+  					return below100 < 100;
+					}));
+				}
+			</script>
+			<p>Similarly to this method, .every() can be used to check if EVERY element passes a test. Not just</p>
+			<input type="submit" value="Is every number in the array above 100?" onclick="every()">
+			<p><span class='code'>const everyNumbers = [102, 103, 99, 104]; console.log(everyNumbers.every((above100) => { return above100 > 100; }));</span> Unlike .some(), the method doesn't stop at the first true but at the first false. As soon as one is false, not every element is true.</p>
+			<script>
+				function every(){
+					const everyNumbers = [102, 103, 99, 104];
+					console.log(everyNumbers.every((above100) => {
+  					return above100 > 100;
+					}));
+				}
+			</script>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

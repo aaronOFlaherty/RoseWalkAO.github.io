@@ -1,0 +1,80 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="CSS/Style.css">
+
+		<nav>
+			<a href="Welcome.html">Home</a><br>
+			<a href="About_me.html">About me</a><br>
+			<a href="Contact.html">Contact</a><br>
+			<a href="Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+</head>
+	<body>
+			<header>
+				<h1>Hello World</h1>
+        		<h3><em>Welcome to my website</em></h3>
+				<img src="Media/5 Day certificatejpg.jpg" alt="My first lil achievement">
+					<p>At the very least, tea is a flavourful way of getting enough fluid into your body each day.<br>
+				On top of that, studies have shown teas can help protect your teeth and your heart</p>
+			</header>
+			<section onmouseover="ingredientsHover()" onmouseout="ingredientsNormal()">
+				<h2>ingredients <i id="ingredients" class="fa fa-coffee" aria-hidden="true"></i></h2>
+				<ul>
+					<li>Tea Bag</li>
+					<li>Water</li>
+					<li>Milk - Dairy/Plant based(Optional)</li>
+					<li>Sugar/Honey (Optional)</li>
+				</ul>
+			</section>
+			
+			<section onmouseover="preparationHover()" onmouseout="preparationNormal()">
+				<h2>preparation <i id="preparation" class="fa fa-check-circle" aria-hidden="true"></i></h2>
+				<ol>
+					<li>
+	                Run the tap a little so the water's nicely aerated, and only boil it once to keep the oxygen level up. Oxygen in water helps flavour!
+					</li>
+					<li>
+						Pop a tea bag into your mug (<em>always</em> a big mug)
+					</li>
+					<li>
+						Pour the hot water over the tea bag and stir briefly.
+					</li>
+					<li>
+						Tea needs time to unlock all its flavour, so give it 3-4 minutes to do its thing. This is a perfect time to grab a sneaky cookie or daydream about vacations.
+					</li>
+					<li>
+						Before removing the tea bag, gently squish it with a spoon against the side of the mug. Not too much or you'll make it bitter.
+					</li>
+					<li>
+						If you want, throw in some milk or sugar or honey or nothing else at all.
+					</li>
+					<li>
+						Enjoy!
+					</li>
+				</ol>
+			</section>
+	</body>
+			<footer>
+				<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+				<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+				<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+			</footer>
+		<script>
+		function ingredientsHover(){
+        document.getElementById("ingredients").style.fontSize = "300%";
+        }
+		function ingredientsNormal(){
+		document.getElementById("ingredients").style.fontSize = "100%";
+		}
+        function preparationHover(){
+        document.getElementById("preparation").style.fontSize = "300%";
+        }
+        function preparationNormal(){
+        document.getElementById("preparation").style.fontSize = "100%";
+        }
+        </script>
+	
+</html>

@@ -1,0 +1,299 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Functions</h1>
+	</header>
+	<body>
+		<main>
+			<p>There are two basic types of functions. Anonymous and named. Both are definied by using the function element inside a script tag.</p>
+
+			<h2>Creating functions</h2>
+			<p>Functions are defined by the use of the keyword 'function' their name and then brackets. Parameters for the function are located in the brackets. After this we have the arguments which behave as local variables inside the function once it has been invoked.</p>
+			<img src="../Media/functiondemo.jpg">
+			<p>A function is a reusable block of code that groups together a sequence of statements to perform a specific task.<br><img src="../Media/function1.jpg"></p>
+			<p>A parameter is a named variable inside a function’s block which will be assigned the value of the argument passed in when the function is invoked:<br><img src="../Media/function2.jpg"></p>
+			<p>To call a function in your code:<br><img src="../Media/function3.jpg"></p>
+			<p>Default parameters allow us to assign a default value to a parameter in case no argument is passed into the function. To return a value from a function, we use a return statement. To define a function using function expressions:<br><img src="../Media/function4.jpg"></p>
+
+			<p>Functions can be written in many different ways:<br>
+				<span class="code">const agreeOrDisagree = (first, second) => {<br>
+					if (first === second) {<br>
+						return 'You agree!'<br>
+					} else {<br>
+						return 'You disagree!'<br>
+					}<br>
+				}<br><br></span>
+				
+				As a function declaration:<br>
+				<span class="code">function agreeOrDisagree(first, second) {<br>
+				   if (first === second) {<br>
+						return 'You agree!'<br>
+					} else {<br>
+						return 'You disagree!'<br>
+					}<br>
+				}<br><br></span>
+
+			As a ternary:<br>
+			<span class="code">const agreeOrDisagree = (first, second) => (first === second) ? 'You agree!' : 'You disagree!'</span></p>
+			
+			<h2>Console log</h2>
+			<p>By using the console log, we can give a function the parameters of a * b. Variable x also has the the same parameters. By calling another variable (z), x can be called with different variables inside the parenthesis to perform the same function but with different values.</p>
+			<img src="../Media/consoleLogTest1.jpg">
+			<p><span class="code">function sayThanks(name) {<br>
+				console.log('Thank you for your purchase ' + name + '! We appreciate your business.');<br>
+			  	}<br>
+			  	sayThanks('Cole');</span><br>
+				This will print: "Thank you for your purchase Cole! We appreciate your business."</p>
+
+			<p>To calculate a rectangle's area, you multiply it's height by width.<br><span class="code">function calculateRectangleArea(width, height){<br>
+				return width * height;<br>
+				};<br>
+			  	const area = calculateRectangleArea(132,83)<br>
+			  	console.log(area)</span><br>
+				Here, the function to finding a rectangle's area has been degined and we are giving it the parameter's and the answer to be printed. Since the function is re-usable, it is easier to pass the function data to work out.</p>
+
+			<p><span class="code">const sleepTimer = (alarm) => {<br>
+				console.log('My alarm is set for: ' + alarm);<br>
+			  	}<br>			   
+			  	sleepTimer('8:30AM');</span><br>
+				8:30 is the argument passed to the function.</p>
+
+			<p>If we have a plant that needs to be watered every Wednesday, this function can be performed:<br>
+			<span class="code">const plantNeedsWater = function(day){<br>
+				if (day === 'Wednesday'){<br>
+				return true;<br>
+				}<br>
+				else{<br>
+				return false;<br>
+				}<br>
+			  	}<br>
+			  	console.log(plantNeedsWater('Tuesday'))</span><br>
+			  	If the day EQUALS Wednesday, the value will be true and the true statement will be printed. Since the day here is Tuesday, nothing is printed.<br>
+				<span class="code">const plantNeedsWater = function(day){</span> can be re-written by using the 'fat arrow: <span class="code">const plantNeedsWater = (day) =>{</span> Now the parameter literally points to the function's body.</p>
+
+			<p>Anonymous functions in JavaScript do not have a name property. They can be defined using the function keyword, or as an arrow function. See the code example for the difference between a named function and an anonymous function.<br>
+				Named function:<br><span class="code">function rocketToMars() {<br>
+				return 'BOOM!';<br>
+				}</span><br>
+				Anonymous function:<br><span class ="code">const rocketToMars = function() {<br>
+				return 'BOOM!';<br>
+				}</span></p>
+				
+			<p>Check the source code for an example!</p>
+			<script>
+				function finalMark(exam1, exam2, exam3){
+					if((exam1 < 0 || exam1 > 100) || (exam2 < 0 || exam2 > 100) || (exam3 < 0 || exam3 > 100)){
+					return 'Invalid score'
+					}
+					let averageScore = (exam1 + exam2 + exam3) / 3
+				  
+					if (averageScore < 60){
+					return 'F'
+					}
+					else if (averageScore < 70){
+					return 'D'
+					} 
+					else if (averageScore < 80){
+					return 'C'
+					}
+					else if (averageScore < 90){
+					return 'B'
+					}
+					else {
+					return 'A'
+					}
+				}
+				console.log('Congratulations! \nYou have earned a ' + finalMark(99, 92, 60) + ' grade!') //Edit these numbers to change the final score! 
+			
+				function reportingForDuty(rank, sName){
+  					return `${rank} ${sName} reporting for duty!`
+				}
+				console.log(reportingForDuty("Private", "Fido"))	
+
+				function calculateWeight(earthWeight, planet){
+					switch(planet) {
+    					case 'Mercury':
+    						return earthWeight * .378;
+						case 'Venus':
+							return earthWeight * .907;
+						case 'Mars':
+							return earthWeight * .377;
+						case 'Jupiter':
+							return earthWeight * 2.36;
+						case 'Saturn':
+							return earthWeight * .916;
+						default:
+							return 'Invalid Planet Entry. Try: Mercury, Venus, Mars, Jupiter, or Saturn.'				
+  					}
+				}
+				console.log('On this planet, you will weigh, you will weigh '+ calculateWeight(100, 'Jupiter'))
+
+				function howOldWillYouBe(age, year){
+					let today = new Date(); //Today explicitly
+					let thisYear = today.getFullYear(); //Just the current year
+					yearDifference = year - thisYear
+					const newAge = age + yearDifference
+					if (newAge > age) {
+       					return `You will be ${newAge} in the year ${year}.`
+    				} else if (newAge < 0) {
+        				return `The year ${year} was ${-newAge} years before you were born.`
+    				} else {
+        				return `You were ${newAge} in the year ${year}.`
+					}
+				}
+				console.log(howOldWillYouBe(26, 2030))
+
+				const whatRelation = percentSharedDNA => {
+   					if (percentSharedDNA === 100) {
+        				return 'You are likely identical twins.'
+    				}
+    				if (percentSharedDNA > 34) {
+        				return 'You are likely parent and child or full siblings.'
+    				}
+    				if (percentSharedDNA > 13) {
+        				return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    				}
+    				if (percentSharedDNA > 5) {
+       				return 'You are likely 1st cousins.'
+    				}
+    				if (percentSharedDNA > 2) {
+        				return 'You are likely 2nd cousins.'
+    				}
+    				if (percentSharedDNA > 0) {
+        				return 'You are likely 3rd cousins'
+    				}
+    				return 'You are likely not related.'
+				}
+				console.log(whatRelation(34))
+				console.log(whatRelation(3))
+
+				function tipCalculator(quality, total){
+  				switch (quality) {
+    				case 'bad':
+      					return total * .05;
+    				case 'ok':
+      					return total * .15;
+    				case 'good':
+     					return total * .20;
+   					case 'excellent':
+    					return total * .30;
+    				default:
+     					return total * .18;
+					}
+				}
+				console.log('You are tipping £' + tipCalculator('good', 100))
+
+				function toEmoticon(expression){
+  					switch (expression) {
+    					case "shrug":
+      					return '|_{"}_|';
+      					case "smiley face":
+						  return ':)';
+      					case "frowny face":
+						  return ':(';
+      					case "winky face":
+						  return ';)';
+      					case "heart":
+						  return '<3';
+      					default:
+						  return '|_(* ~ *)_|'
+    					}
+					}
+				//CHOOSE AN EMOTE FROM ABOVE
+				console.log(toEmoticon("heart"))
+
+				function howLong(sentence) {
+					return sentence.length
+				}
+				console.log('This sentence has ' + howLong('How long is this sentence?') + ' characters!')
+			</script>
+
+			<p>Console log can be used to do many things such as replacing words, transforming all text to upper case or locate a word in a sentence. In this example, the \ is used to allow an extra ' and not discontinue the string.</p>
+			<img src="../Media/joeTest.jpg">
+
+			<h2>Factory function</h2>
+			<script>
+				function alienInvader(name, size, ship){
+  					return{
+    					name,
+						size,
+						ship,
+    					speech(){
+      					console.log('Hello. My name is ' + name + '. I may be ' + size + ' but I pilot the fabulous ' + ship + '.')
+					    }
+					  }
+					}
+
+				const bloog = alienInvader('Bloog', 'big', 'x300 SuperJet')
+				function alien1(){
+						console.log(bloog.speech())
+				}
+
+				const yle = alienInvader('Yle', 'tiny', 'Benjinator')
+				function alien2(){
+					console.log(yle.speech())
+				}
+
+				const klorxo = alienInvader('Klorxo', 'the size of an elephant', 'Plasma Burner')
+				function alien3(){
+					console.log(klorxo.speech())
+				}
+
+				function randomAlien(){
+					y = (Math.floor(Math.random()*3))
+					if (y == 0){
+						randomName = 'Glorbo Sparkus'
+					} else if(y == 1){
+						randomName = 'Clonk'
+					} else {
+						randomName = 'Chrondonk'
+					};
+
+					z = (Math.floor(Math.random()*3))
+					if (z == 0){
+						randomSize = 'microscopic in size'
+					} else if(z == 1){
+						randomSize = 'as big as a beaver'
+					} else {
+						randomSize = 'equal to the size of a whale'
+					};
+
+					x = (Math.floor(Math.random()*3)) //Times by 3 for 3 options - 0 1 2
+					if (x == 0){
+						randomShip = 'Excelsior MkIII'
+					} else if(x == 1){
+						randomShip = 'Super Speedster'
+					} else {
+						randomShip = 'The Mach 6 Mongaloid'
+					};
+
+					const randomAlien = alienInvader(randomName, randomSize, randomShip)
+					console.log(randomAlien.speech())
+				}
+			</script>
+
+			<button type='button' onclick="alien1()">Alien 1</button>
+			<button type='button' onclick="alien2()">Alien 2</button>
+			<button type='button' onclick="alien3()">Alien 3</button><br>
+			<button type='button' onclick="randomAlien()">RANDOM ALIEN 3</button><br>
+		</main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+
+		<script type="text/javascript">
+
+			function nsb(){
+				var aNumber = 1; 
+				var aString = "1"
+				var bString = "2"
+				var aBoolean = true
+			alert(aString + bString);
+			}
+
+			function gm(){
+				var aNumber = 1; 
+				var aString = "1"
+				var bString = "2"
+				var aBoolean = true
+			alert(aNumber + parseInt(aString));
+			}
+
+			function va(){
+				let aNumber = 1; 
+				let aString = "1"
+				var bString = "2"
+				var bNumber = 3;
+
+				const aBoolean = true 
+				/*aBoolen = false*/		//Allowing this function will break the calculation. Above, aBoolean is constant. This rule breaks that
+
+				aNumber = bNumber + aNumber
+
+			alert(aNumber + aBoolean);
+			}
+
+			function con(){
+
+				var aBoolean = false
+
+			if(aBoolean) {
+				alert(aBoolean + "The first if statement is true."); //If aBoolean's value is true, run this
+			}
+			else{
+				alert("The else statement executes because if is false") //OR ELSE, run this instead
+			}
+				
+			aBoolean = true;
+
+			var bBoolean = false;
+
+			if (bBoolean){
+				alert("The second if statement is true") //If the above is true, display this alert as well
+			}
+
+			else if(aBoolean){
+				alert("Else if is true") //if aBoolean is true AND bBoolean is false, this is run
+			}
+			}
+
+		</script>
+
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Datatypes</h1>
+	</header>
+	<body>
+		<Main>
+			<h3>Numbers, Strings and Booleans</h3>
+			<input type="submit" id="submit" value="Submit button" onclick="nsb()">
+			<p>Integer is a numeric value, while String is a character value represented in quotes.</p>
+			<p>aNumber = 1<br>
+				aString = "1"<br>
+				bString = "2"<br>
+				aBoolean = true</p>
+			<p>aNumber + aNumber = 2<br>
+				aNumber + aString = 11<br>
+				aString + bString = 12<br>
+				bString + aNumber = 21<br>
+				aNumber + aBoolean = 2<br>
+				aBoolean has a positive value of 1</p>
+
+			<h3>Global methods</h3>		
+			<input type="submit" id="submit" value="Submit button" onclick="gm()">
+			<p>"parseInt" convertes the value (in this case a string) into an integer.<br> 
+				Now aNumber + aString = 2<br>
+				"parseFloat" converts its first argument to a string</p>
+			
+			<h3>Variables</h3>
+			<input type="submit" id="submit" value="Submit button" onclick="va()">
+			<p>var - This is the original way to declare a variable value<br>
+				let - This is a newer function and detects Variables<br>
+				const - Can be grouped similar to var & let but the value always stays the same. aBoolean's true value is constant. Allowing the false value will break the calculation.</p>
+
+			<h3>Conditional statements</h3>
+			<input type="submit" id="submit" value="Submit button" onclick="con()">
+			<p>if - Always works because the statement is true. If A is less than B, run the script 1.<br>
+				else - If the above is false (A is more than B), run script 2.<br>
+				else if - If the previous statement is false but the current one is true.<br>
+				switch case - Offers a set of cases that can be triggered by a variable of a certain value.<br></p>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

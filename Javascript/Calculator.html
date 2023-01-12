@@ -1,0 +1,77 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<link rel="stylesheet" href="../CSS/Calculator.css"> <!--Making use of an extra SS-->
+
+		<script src="../Scripts/Calculator.js" type="text/javascript"></script> <!--this is calling the exernal script-->
+
+		<style>
+		</style>
+
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Calculator</h1>
+	</header>
+	<body>
+		<Main>
+			<table>
+				<input id="operation" value="0" type="hidden"> <!--Hidden inputs contain the data-->
+				<input id="operand" value="" type="hidden"> <!--Stores the first number typed into the calculator-->
+				<input id="equivalent" value="0" type="hidden">
+				<input id="decimalVar" value="0" type="hidden">
+
+				<caption><input id="result" type="text" value = "0" readonly></caption> <!--"readonly" stops user interferance"-->
+
+				<tr>
+					<td><input id="allclear" value="AC" type="button" onclick="allClear()"></td>
+					<td><input id="square" value="x&sup2;" type="button" onclick="square()"></td><!--Puts it to the power of 2-->
+					<td><input id="percent" value="%" type="button" onclick="percent()"></td>
+					<td><input id="divide" value="&divide;" type="button" onclick="operators(4)"></td>
+				</tr>
+
+				<tr>
+					<td><input id="seven" value="7" type="button" onclick="input(7)"></td>
+					<td><input id="eight" value="8" type="button" onclick="input(8)"></td>
+					<td><input id="nine" value="9" type="button" onclick="input(9)"></td>
+					<td><input id="multiply" value="&times;" type="button" onclick="operators(3)"></td>
+				</tr>
+
+				<tr>
+					<td><input id="four" value="4" type="button" onclick="input(4)"></td>
+					<td><input id="five" value="5" type="button" onclick="input(5)"></td>
+					<td><input id="six" value="6" type="button" onclick="input(6)"></td>
+					<td><input id="subtract" value="&minus;" type="button" onclick="operators(2)"></td>
+				</tr>
+
+				<tr>
+					<td><input id="one" value="1" type="button" onclick="input(1)"></td>
+					<td><input id="two" value="2" type="button" onclick="input(2)"></td>
+					<td><input id="three" value="3" type="button" onclick="input(3)"></td>
+					<td><input id="add" value="&plus;" type="button" onclick="operators(1)"></td>
+				</tr>
+
+				<tr>
+					<td><input id="plusminus" value="&plusmn;" type="button" onclick="plusminus()"></td>
+					<td><input id="0" value="0" type="button" onclick="input(0)"></td>
+					<td><input id="decimal" value="." type="button" onclick="decimalPoint()"></td>
+					<td><input id="equals" value="=" type="button" onclick="equals()"></td>
+				</tr>
+
+			</table>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

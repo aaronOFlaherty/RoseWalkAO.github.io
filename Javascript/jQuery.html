@@ -1,0 +1,160 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			img{
+				width: 50%;
+			}
+		</style>
+		<script src="../Scripts/jquery-3.6.1.js"></script> <!--A link to the downloaded jQuery-->
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script><!--Linking to the onlind jQuery database-->
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>jQuery</h1>
+	</header>
+	<body>
+		<Main>
+			<p>As of Aug 2022, jQuery is used by 77% of the 10 million most popular websites. It is lightweight takes common tasks that needs lines of code and wraps them in methods called by a ingle line and it simplifies many complicated tasks when using JS.</p>
+		
+			<h2>Setting up jQuery</h2>
+			<p>After downloading jQuery, it can be linked from the current webpage using script tags.</p>
+	
+			<h2 id="using">Being replaced by jQuery</h2>
+			<p>All jQuery functions start with a $ and look like this $(selector).action()</p>
+			<ul>
+				<li>
+					<p>When the page is loaded, this section's title text and colour will change. You won't even see it.</p>
+					<script>
+						function changeText (){
+							$("#using").html("Using jQuery"); //Simply refers to jQuery to change a heading
+						}
+						$(document).ready(changeText); //When the page has fully loaded and is ready, perform function jQtest
+			
+						function changeColour () {
+						$("#using").attr("style","color:white");
+						}
+						$(document).ready(changeColour);
+					</script>
+				</li>
+
+				<li>
+					<button id ="hideh2">Clicking me will delete all h2 tags on this page</button>
+					<script>
+						$(document).ready(function(){//hiding h2 tags
+							$("#hideh2").click(function(){// Once the ID has been clicked, perform this function
+								$("h2").hide(); //Hide h2 elemends
+							})
+						})
+					</script>
+				</li>
+
+				<li>
+					<p id="test">Just some random <b>bold</b> text in a p tag</p>
+
+					<button id="b1">I will show you the text from the above</button> <button id="b2">and I'll show you the HTML code</button>
+					<script>
+					$(document).ready(function(){
+						$("#b1").click(function(){
+							alert('This is the text "' + $("#test").text() + '"')
+						});
+						$("#b2").click(function(){
+							alert('This is the HTML "' + $("#test").html() + '"')
+						});
+					});
+					</script>
+				</li>
+
+				<li>
+				<p id="output1">Changing the text</p>
+				<button id="input1">Set the text</button>
+				<script>
+					$("#input1").click(function(){
+						$("#output1").text("Thank you for changing my text");
+					})					
+				</script>
+				</li>
+
+				<li>
+				<p id="output2">Changing the HTML</p>
+				<button id="input2">Set the HTML</button>
+				<script>
+					$("#input2").click(function(){
+						$("#output2").html("<i><b>Thank you for changing my HTML</b></i>");
+					})					
+				</script>				
+				</li>
+
+				<li>
+				<p><input type="text" id="output3" value="Change a field's value"></p>
+				<button id="input3">Set the value</button>
+				<script>
+					$("#input3").click(function(){
+						$("#output3").val("Thank you for changing my value");
+					})					
+				</script>			
+				</li>	
+				
+				<li>
+					<p>Append text to the webpage (This can be spammed)</p>
+					<button onclick="append()">Append to an element</button>
+					<script>
+						function append(){
+							var append1 = "<p>Appended text with HTML </p>"; //Creating text with: HTML
+							var append2 = $("<p></p>").text("Text added with jQuery"); // JQUERY
+							var append3 = document.createElement("p");
+							append3.innerHTML = "Text created using the DOM"; // DOM
+							$("body").append(append1, append2, append3); //Appends the above
+						}
+					</script>
+				</li>
+
+				<br><!--Spaces out the buttons-->
+				<li id="remove" style="position:absolute">
+					<button onclick="remove()">Click me to delete me!</button>
+					<script>
+						function remove(){
+						$("#remove").remove()
+						}
+					</script>
+				</li>
+
+				<br>
+				<li id="animateMe" style="position: relative;"> <!--Animations need their postion defined-->
+					<p>Animating objects</p>
+					<button id="animationR">Click me to move this section right</button>
+					<button id="animationL">Click me to move this section left</button>
+
+					<p>To animate an object, it's position attribute must be defined. <a href="https://www.w3schools.com/css/css_positioning.asp">More can be found here</a></p>
+					<script>
+						$(document).ready(function() {
+							$("#animationR").click(function() {
+							$("#animateMe").animate({left:'250px'}); //250 pixels from the left
+							})
+						})
+						$(document).ready(function() {
+							$("#animationL").click(function() {
+							$("#animateMe").animate({right:'250px'});//250 pixels from the right
+							})
+						})
+					</script>					
+				</li>
+			</ul>
+		</Main>
+	</body>
+
+
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

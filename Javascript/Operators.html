@@ -1,0 +1,154 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+
+		<script type="text/javascript">
+
+			function arithmetic(){
+				var aNumber = 4; 
+				aNumber = aNumber * 6;
+
+			alert(aNumber);
+			}
+
+			function modulus(){
+				aNumber = 23;
+				bNumber = 5;
+			alert(aNumber % bNumber) //5 10 15 20 and 3 remains
+			}
+
+			function assignment(){
+				var aNumber = 1; 
+				var bNumber = 2;
+
+				if (aNumber = bNumber){
+
+					aNumber
+
+			alert(aNumber + " is equal to " + bNumber);
+				}
+			}
+
+			function comparison(){
+				var aNumber = 1; 
+				var bNumber = 1;
+
+				if (aNumber == bNumber){
+
+			alert(aNumber + " is equal to " + bNumber);
+				}
+
+				if (aNumber <= bNumber){
+
+			alert(aNumber + " is less than OR equal to " + bNumber);
+				}
+
+				if (aNumber >= bNumber){
+
+			alert(aNumber + " is greater than OR equal to " + bNumber);
+				}
+
+			bNumber = 2; 	//Allows the below functions to operate. 
+							//Without this, the first statement will not trigger the below.
+
+				if(aNumber !=bNumber){ //If aNumber is NOT equal to bNumber
+			alert(aNumber + " is NOT equal to " + bNumber);
+				}
+
+				if(aNumber < bNumber){
+			alert(aNumber + " is less than " + bNumber);
+				}
+
+				if(bNumber > aNumber){
+			alert(bNumber + " is MORE than " + aNumber);
+				}
+			}
+
+			function game(){
+				m = "Matthew";
+				mToday = 2;
+				mTotal = 2 + 1 + 2;
+
+				name = "Steve";
+				sToday = 1;
+				sTotal = 1 + 2 + 2;
+
+				if(mToday > sToday){
+					alert("Matthew scored more than Steve today. Matthew scored " + mToday + " and Steve scored " + sToday + " today.")
+				} else{
+					alert("Matthew didn't score more than Steve today")}
+
+				if(mTotal > sTotal){
+					alert("Overall Matthew has the highest score with " + mTotal + "."); //If Matthew has more
+				} else if (sTotal > mTotal){
+					alert("Steven still has the highest score with " + sTotal + "."); //If steve has more
+				} else {
+					alert("It's a draw! Matthew & Steve have the same score!"); //The only other option is a draw so this answer will default
+				}
+			}
+		
+		</script>
+
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Operators</h1>
+	</header>
+	<body>
+		<Main>
+
+			<h3>Arithmetic</h3>
+			<input type="submit" id="submit" value="Arithmetic" onclick="arithmetic()">
+			<ul>
+				<li>"+" a = 2 + 4</li>
+				<li>"-" a = 3 - 2</li>
+				<li>"*" a = 4 * 3</li>
+				<li>"/" a = 4 / 2</li>
+				<li>"++" a = a + 1</li>
+				<li>"--" a = a - 1</li>
+			</ul>
+			<input type="submit" id="submit" value="Modulus" onclick="modulus()">
+			<p>The modulus operator is used to get the remainder.</p>
+
+			<h3>Assignment</h3>
+			<input type="submit" id="submit" value="Assignment" onclick="assignment()">
+			<ul>
+				<li>"let" a = 0</li>
+				<li>"+=" a + = 4</li>
+				<li>"-=" a - = 4</li>
+				<li>"*=" a * = 4</li>
+				<li>"/=" a / = 4</li>
+			</ul>
+
+			<h3>Comparison</h3>
+			<input type="submit" id="submit" value="Comparison" onclick="comparison()">
+			<ul>
+				<li>"==" Equal to</li>
+				<li>"!=" Not equal to</li>
+				<li>">" Greater than</li>
+				<li>"<" Less than</li>
+				<li>">=" Greater than or equal to</li>
+				<li>"<=" Less than or equal to</li>
+			</ul>
+
+			<p>Using all operators in one function. In this example, players have been assigned names and today's score. Arithmetic allows for a combination of their total scores and comparison evaluates who has done better today AND overall.</p>
+			<input type="submit" id="submit" value="Click me for the scores!" onclick="game()">
+
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

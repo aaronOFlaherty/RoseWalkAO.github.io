@@ -1,0 +1,183 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Forms & Tables</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			.bakery {
+				background-color: rgb(115, 248, 248);
+				padding: .5em;
+				width: 90%;
+			}
+			.schedule th{
+				border:.1em solid black;
+				padding: 0.5em;
+				text-align: center;
+			}
+			.bakery form table{
+				border: .3em solid black;
+				width: 60%;
+				text-align: center;
+				
+			}
+			form {
+				padding-left:1em;
+			}
+			caption{
+				font-weight: bold;
+				text-align: left;
+				font-size: larger;
+			}
+			#order{
+				border-collapse: collapse;
+			}
+			#order td{
+				border: .1em solid black;
+				padding: .5em;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function calculate() {
+				var cake= 0;
+				var gift= 0;
+				var total= 0;
+
+				cakepops = 13 * document.getElementById("cakepops").value;	/*Each instance of the value is multiplied by the value selected*/
+				cakesicle = 15 * document.getElementById("cakesicle").value;
+				brownie = 20 * document.getElementById("brownie").value;
+
+				if(document.getElementById("gift").checked == true) { 	/*IF gift is checked, order = 5*/
+					gift=5;							
+				}
+				else if (document.getElementById("anon").checked){
+					gift=0;
+				}
+
+					total = cakepops + cakesicle + brownie + gift;
+
+					alert("The total cost of your order is £" + total); /*Produces a string in an alert box*/
+			}
+		</script>
+
+		<script>
+			function validatenum() {
+				var x, text;
+				x = document.getElementById("numbertest").value;
+				if (isNaN(x) || x < 1 || x > 200) {
+					text = "Your input is invalid.";} //If x is not a number (NaN), lower than 1 or higher than 200, the statement is true and runs this line.
+					else {
+						text = "Well done, you can count." //And if it's false we get the correct answer.
+					}
+					document.getElementById("answer").innerHTML = text;
+			}
+		</script>
+
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+	</header>
+	<body>
+		<h1>Forms</h1>
+		<form>
+			<label for="name">Text entry 1</label>
+			<Input type="text" id="name" placeholder="Name"><br>
+
+			<label for="email"> Text entry 2</label>
+			<input type="text" id="email" placeholder="Email"><br>
+
+			<label for="Choices">List</label>
+			<Select name="Choices">
+				<option>Item 1</option> <!--Sizes or quantities-->
+				<option>Item 2</option>
+				<option>Item 3</option>
+			</Select><br>
+
+			<textarea id="textarea" rows="10" cols="50" placeholder="Any additional information?"></textarea><br><!--Size of the entry form-->
+
+			<input type="submit" id="submit" value="Submit"> <!--Name and addresses for orders-->
+		</form><br><br>
+
+		<p>Please input a number between 1 and 200</p>
+		<input id = "numbertest" type="number"><button type="button" onclick="validatenum()">Submit your number!</button>
+		<p id="answer"></p>
+
+		<div class="bakery">
+			<h2>Bakery Example</h2>
+			<table id="details">
+				<Caption>Your details</Caption>
+				<tr>
+					<td><label for="name">Your name:</label></td>
+					<td><Input type="text" id="name"></td>
+				</tr>
+				<tr>
+					<td><label for="email">Your email:</label></td>
+					<td><input type="email" id="email" name="email"></td>
+				</tr>
+				<tr>
+					<td><label for="phone">Phone number:</label></td>
+					<td><input type="tel" id="phone" name="phone"></td>
+				</tr>
+				<tr>
+					<td><label for="address">House number:</label></td>
+					<td><input type="text" id="address"></td>
+				</tr>
+				<tr>
+					<td><label for="address">Street name:</label></td>
+					<td><input type="text" id="address"></td>
+				</tr>
+				<tr>
+					<td><label for="address">Post code:</label></td>
+					<td><input type="text" id="address"></td>
+				</tr>
+			</table><br>
+
+			<table id="order">
+				<Caption>Your order</Caption>
+				<tr>
+					<td>10 Cake Pops</td>
+					<td>£13</td>
+					<td><input type="number" id="cakepops" min="0" value="0"></td> <!--"min" stops any negative values-->
+				</tr>
+				<tr>
+					<td>10 Cakesicles</td>
+					<td>£15</td>
+					<td><input type="number" id="cakesicle" min="0" value="0"></td> <!--Value shows its default value-->
+				</tr>
+				<tr>
+					<td>Brownie Box</td>
+					<td>£20</td>
+					<td><input type="number" id="brownie" min="0" value="0"></td>
+				</tr>
+				<tr>
+					<td>Would you like to make this a gift?</td>
+					<td>£5</td>
+					<td><input type="radio" id="gift" name="extra" value="5"></td> <!--The value of the tickbox is 5-->
+				</tr>
+				<tr>
+					<td>Would you like this to be anonymous?</td>
+					<td>£0</td>
+					<td><input type="radio" id="anon" name="extra" value="0"></td> <!--"name="extra"" groups the options together only allowing 1 selection-->
+				</tr>
+			</table>
+
+			<p>Additional information:</p>
+			<textarea id="textarea" rows="5" cols="35"></textarea><br><!--Size of the entry form-->
+			<p><input type="submit" id="submit" value="Submit" onclick="calculate()"></p> <!--"On click, the caluclate" action is performed-->
+			<p><input type="reset" id="reset" value="Reset"></p> <!--RETURN TO THIS-->
+
+		</div>
+
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

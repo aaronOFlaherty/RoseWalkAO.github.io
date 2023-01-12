@@ -1,0 +1,90 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+      	h2{
+			text-decoration:underline;
+            }
+		</style>
+		<script>
+			function carTest(){
+				var owner1 = "Davie Jones", car1 = "Honda Civic", price1 = "£5,000";
+				alert(owner1 + " owns a " + car1 + " valued at " + price1 + ".");
+				}
+
+			function arrayTest(){
+				var array = [50, 60, "text", 14, "more text"]
+				alert(array + "  -  Depending on the value chosen in the next line of code, you will get one of these values.")
+				alert(array[3]) //Display the 4th value (index's 3rd value)
+				array[3] = "77"
+				alert("The value of array[3] has now changed and we get  -  " + array[3])
+				alert("And now if we call the same array, the value has changed  -  " + array)
+				}
+
+			function tagTest(){
+				var taga = document.getElementsByTagName('a'); //Looking for 'a' tags
+				var tagh = document.getElementsByTagName('h2'); //'h2' tags
+				alert("There are " + taga.length + " links and " + tagh.length + " h2 tags on this page ")
+				}
+
+			function tagVar(){
+				var tagA = document.getElementsByTagName('a');
+				alert(tagA[3])
+				}
+		</script>
+
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Variables</h1>
+	</header>
+	<body>
+		<main>
+			<p>Variables are used to hold bits of information and carve out a spot of memory to hold things. This information can then be retrieved later. This can be someting like information a user had put on a form, values, numbers & strings.</p>
+			
+			<h2>Basics</h2>
+			<p>Variables are declared by using the 'var' keyword. By assigning a variable, it can be easier to refer to with a function.<br>
+			var car = document.getElementById("car")<br>
+			Instead of referring to the source, we can just refer to "car".</p>
+			<input type="submit" id="submit" value="This button will perform a function in which it will concatenate an owner, car and the car's value into a readable sentence. The variables and strings can be edited to perform different things." onclick="carTest()">
+				
+			<h2>Arrays</h2>
+
+			<h3>Defining arrays</h3>
+			<p>Arrays are variables which contain multiple values simultaneously. They can be declared in two ways:<br>
+			Shorthand - var array = [50, 60, "text", 14, "more text"]<br>
+			longhand - var array = []; var array = 50; var array = 60; var array = "text"; var array = 14; var array = "more text";</p>
+
+			<p>Individual values can be called by using zero based indexing. The first item will be 0, second 1, third 2. To call the value 60, we can do array[1]. Properties can also define information such as how long and how many variables are in an array.</p>
+			<input type="submit" id="submit" value="Click here to get a value from array." onclick="arrayTest()">
+			
+			<h3>Creating arrays</h3>
+			<p>An array can also be created from the elements of a webpage</p>
+			<input type="submit" id="submit" value="I will tell you how many links (anchor tags) and h2 tags are on this page." onclick="tagTest()">
+			<input type="submit" id="submit" value="Clicking me will tell you the 4th (3rd by index) link on this page." onclick="tagVar()">
+			
+			<h3>Organising arrays</h3>
+			<p>By giving the function a method to show a list, information can be shown in different orders:
+				<ul>
+					<li>.sort - Alphabetical</li>
+					<li>.join - All joined together</li>
+					<li>.reverse - Reverse order</li>
+				</ul>
+			</p>
+
+		</main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

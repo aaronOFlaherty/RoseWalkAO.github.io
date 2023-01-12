@@ -1,0 +1,74 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			#box{
+				display: block;
+  				margin-left: auto;
+  				margin-right: auto;
+			}
+			#boxDemo{
+  				width: 50%px;
+				padding: 10px;
+				border: 5px dashed rgb(0, 0, 0);
+  				margin: 10px;
+				color:white;
+				background-color: cornflowerblue;
+			}
+			mark{
+				background-color: red;
+				color: white;
+			}
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>The Box Model</h1>
+	</header>
+	<body>
+		<Main>
+			<img id="box" src="../Media/BoxModel.png" width="70%">
+			
+			<p id="boxDemo"><strong><mark>The box model is the area around an element such as this paragraph that gives it space to be properly seen. It is made up of the width & height, the content stored, the padding, a border and it's margin. Within this section, we have declared (with CSS) that:</mark></strong></p>
+			<ul>
+				<li>The width is 50% of the screen size and the height is 60 pixels high</li>
+				<li>There is a space of 10px between the content and it's border. This is the padding.</li>
+				<li>The border is 5 pixels thick</li>
+				<li>The margin is 10 pixels. This creates space from other content.</li>
+			</ul>
+			
+			<ul>
+				<li>Content - The content of the box, where text and images appear</li>
+				<li>Padding - Clears an area around the content. The padding is transparent</li>
+				<li>Border - A border that goes around the padding and content</li>
+				<li>Margin - Clears an area outside the border. The margin is transparent</li>
+			</ul>
+
+			<h2>Shorthand styling</h2>
+			<p>When targeting an element's attribute, shorthand properties can be used to minimise code. For example, if we are targeting an element's border.
+			</ul>
+				<li>1 value syntax - <strong>border-width: 1em</strong> - The single value represents all edges.</li>
+				<img src="../Media/1ValueSyntax.png">
+				<li>2 value syntax - <strong>border-width: 1em 2em</strong> - The first value targets the top and bottom properties. The second targets the sides</li>
+				<img src="../Media/2ValueSyntax.png">
+				<li>3 value syntax - <strong>border-width: 1em 2em 3em</strong> - The first value targets the top, second the sides and third the bottom.</li>
+				<img src="../Media/3ValueSyntax.png">
+				<li>1 value syntax - <strong>border-width: 1em 2em 3em 4em</strong> - Working it's way clockwise, top, right, bottom and left are represented.</li>
+				<img src="../Media/4ValueSyntax.png">
+			</ul>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

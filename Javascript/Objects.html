@@ -1,0 +1,194 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<script>
+		</script>
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Objects</h1>
+	</header>
+	<body>
+		<main>
+			<h2>What is an object?</h2>
+			<p>Learning objects are key to Javascript. If you understand objects, you understand Javascript.</p>
+			<p>Objects have properties and methods. All objects have properties but their values are probably different. Their methods may also be the same but they are performed at diferent times. An object contains these properties and are defined by them. The BEST way to think of objects is like a pizza</p>
+			<h3>Properties</h3>
+			<ul>
+				<li>Toppings</li>
+				<li>Size</li>
+				<li>Cheese</li>
+			</ul>
+			<h3>Methods</h3>
+			<ul>
+				<li>Cooking</li>
+				<li>Preparing</li>
+				<li>Delivery</li>
+			</ul>
+
+			<p>Objects can be: Booleans, Numbers, Stringnames, Dates, Maths, Expressions, Arrays and Functions. Primative data values can be objects but they need to be created as objects.</p>
+
+			<h3>Creating objects</h3>
+			<p>Objects can be created by using an object literal<br>
+			<img src = "../Media/nameLiteral.jpg"><br>
+			or keyword new.<br>
+			<img src = "../Media/nameKeyword.jpg"></p>
+
+			<p>A 3rd way to create objects is by using an object constructor. The first two options only cretae single objects. This method allows the format to be re-used to create multiple objects of a single type.<br>
+			<img src = "../Media/nameConstructor.jpg"><br>
+			These objects will contain the same properties & methods by contain different values.</p>
+
+			<h3>Prototype</h3>
+			<p>Every object has a prototype and that prototype is also an object. New objects inherit the prototypes Ps & Ms. Objects created and then edited will only edit their own Ps & Ms. A new object created from the prototype will not have the edited objects Ps & Ms. The prototype must be edited and changed for any new objects to share all of the Ps & Ms.</p>
+
+			<h2>What's the difference to an array?</h2>
+			<p>Arrays contain values in a list format. When we refer to an item within the array, we use 0 based indexing to retrieve the value. An object holds name:value pairs reffered to as properties.<br>
+			array = [0, 1, 2, 3, 4, 5]<br>
+			object = {fName: "Johnny", sName: "Bravo", eyeColour: "unknown", height: "6'3", bodytype: "muscular"}</p>
+			
+			<h2>Editing objects</h2>
+			<p>Simply, a new property can be created and inserted into an object and an object can be removed by creating a new property and using the delete keyword.<br>
+			<img src = "../Media/nameEditing.jpg"><br>
+			This will only dit this object and NOT the prototype. All new objects created will be different.</p>
+
+			<h2>Calling the objects</h2>
+
+			<h3>Calling individual objects.</h3>
+			<p>Using the above examples, we can call the object and their specific property.<br>
+			<img src = "../Media/nameCall.jpg"></p>
+
+			<h3>Looping the objects</h3>
+			<img src = "../Media/nameLoop.jpg"> </p>
+
+			<h2>Methods</h2>
+			<p>If we wanted our receptionist to greet our guests we can do:<br>
+				<span class="code">let greetingMessage1 = 'Hello, please take a seat'<br>
+					let Receptionist = {greeting1(){<br>
+					console.log(greetingMessage1)<br>
+				  }, greeting2(){<br>
+					console.log('Can I get ou a glass of water?')<br>
+				  }}<br>
+				Receptionist.greeting1<br>
+				Receptionist.greeting2</span><br>
+				This will print the two statements
+			</p>
+
+			<p>We can also change our employees properties with methods:<br>
+			<span class='code'>			let dailySchedule = 'Saturday'<br>
+
+				let CEO = {<br>
+					suit : 'Navy Blue Suit',<br>
+					schedule: 'Busy meetings'<br>
+				  };<br><br>
+	
+				  function outfit(obj){<br>
+					obj['suit'] = 'Shorts & a t-shirt';<br>
+				  }<br><br>
+	
+				  function workToday(obj){<br>
+					if (dailySchedule === 'Saturday' || dailySchedule === 'Sunday'){<br>
+						obj.workToday=false, obj.schedule="'Chillin'"<br>
+					} else {<br>
+						obj.workToday=true<br>
+					}<br>
+				  }<br><br>
+	
+				  console.log(CEO)<br>
+				  outfit(CEO)<br>
+				  workToday(CEO)<br>
+				  console.log(CEO)</span><br>
+				The CEO is the object and has the value of a Navy Blue Suit and is scheduled for busy meetings. Below that are the functions where one will change the suit choice straight away and the other will only change the CEO's schedule value if the global variable dailySchedule is Saturday OR Sunday.<br><br> In the last block the CEO object will be shown by its default value, the functions will be called and the CEO's properties will have updated and displayed again.<br><br>Note: the dailySchedule is declared as a global variable since: 1, it might not only affect the CEO object and 2, it would be out of scope (undefinable) for the function.</p>
+
+			<script>
+			let dailySchedule = 'Saturday'
+
+			let CEO = {
+				suit : 'Navy Blue Suit',
+				schedule: 'Busy meetings'
+			  };
+
+			  function outfit(obj){
+				obj['suit'] = 'Shorts & a t-shirt';
+			  }
+
+			  function workToday(obj){
+				if (dailySchedule === 'Saturday' || dailySchedule === 'Sunday'){
+					obj.workToday=false, obj.schedule="'Chillin'"
+				} else {
+					obj.workToday=true
+				}
+			  }
+
+			  console.log(CEO)
+			  outfit(CEO)
+			  workToday(CEO)
+			  console.log(CEO)
+
+			const refrigerator = {
+  				dairy: ['cheese', 'milk', 'sour cream'],
+  				temperature: 35,
+  				'produce drawer': {
+   					vegetables: ['lettuce', 'broccoli', 'peas'],
+    				fruit: ['apples', 'berries', 'grapes'] 
+  				}
+			
+			}
+			console.log(refrigerator['produce drawer'].fruit[0]) //Accesses the fridge object, the produce drawer property, the fruit list and 0 point index item 0. Apples.
+			</script>
+
+			<h3>This</h3>
+			<p><span class='code'>const Steve = {<br>
+				name: 'Steve'<br>
+				job: 'Human Resources',<br>
+				startTime : 1200,<br>
+				provideInfo(){<br>
+				  return `Hi, my name is ${this.name}. I work in ${this.job} and my start time is ${this.startTime}.`<br>
+				}<br>
+			  };<br><br></span><br>
+			The 'this' keyword can be useful as it allows us to references the calling object and provides access to the properties. By using string interpolation, (`` back ticks and $) a function can refer to itself and return a value based off that.</p>
+			
+			  <h3>Getters</h3>
+			  <p><span class='code'>const Employee = {<br>
+				_startTime: 100,<br>
+				get _startWork(){<br>
+				if(typeof this._startTime === 'number'){<br>
+				  return 'My starting time is ' + this._startTime<br>
+				} else {<br>
+				  return 'Unavailable data entry'<br>
+				}<br>
+			  }<br>
+			  }<br>
+			  console.log(Employee._startWork)</span><br>
+			  Getters can perform an action on the data when getting a property. Getters can return different values using conditionals. In a getter, we can access the properties of the calling object using this. The functionality of our code is easier for other developers to understand.</p>
+		
+			  <script>
+				const Employee = {
+				_startTime: 1500,
+				get _startWork(){
+				if(typeof this._startTime === 'number'){
+				  return 'My starting time is ' + this._startTime
+				} else {
+				  return 'Please use a 24hour format: "1200"'
+				}
+			  }
+			  }
+			  console.log(Employee._startWork)
+			  </script>
+		</main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

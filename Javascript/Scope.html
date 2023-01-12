@@ -1,0 +1,76 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Scope</h1>
+	</header>
+	<body>
+		<Main>
+			<h2>What is in scope?</h2>
+			<p>An important idea in programming is scope. Scope defines where variables can be accessed or referenced. While some variables can be accessed from anywhere within a program, other variables may only be available in a specific context. You can think of scope like the view of the night sky from your window. Everyone who lives on the planet Earth is in the global scope of the stars. The stars are accessible globally. Meanwhile, if you live in a city, you may see the city skyline or the river. The skyline and river are only accessible locally in your city, but you can still see the stars that are available globally.</p>
+
+			<h3>Global scope or block scope</h3>
+			<p><span class="code">const city = "New York City";<br>
+				function logCitySkyline() {<br>
+				  let skyscraper = "Empire State Building";<br>
+				  return "The stars over the " + skyscraper + " in " + city;<br>
+				}<br>
+				console.log(skyscraper);</span> skyscraper will not be printed since it is not in scope.<br>
+				<span class="code">console.log(logCitySkyline);</span> will print and the skyscraper variable will also be displayed.</p>
+
+			<p>Scope is the context in which our variables are declared. We think about scope in relation to blocks because variables can exist either outside of or within these blocks. In global scope, variables are declared outside of blocks. These variables are called global variables. Because global variables are not bound inside a block, they can be accessed by any code in the program, including code in blocks. In the above example, only the variable city is available in the global scope. If the skyscraper was also outside of the function, it too would be in global scope.<br> When a variable is defined inside a block, it is only accessible to the code within the curly braces {}. We say that variable has block scope because it is only accessible to the lines of code within that block. If code is only available.</p>
+
+			<p>Global scope:<br>
+			<span class="code">let colour = 'yellow'<br>
+			function callColour(){<br>
+				console.log(colour)
+			}</span> The code is accessible from anywhere and can be called from anywhere.</p>
+
+			<p>Block scope:<br>
+			<span class="code"><br>
+			function callColour(){<br>
+				let colour = 'yellow'<br>
+				console.log(colour)<br>
+			}</span> Only the function callColour can call / print yellow. Trying to use <span class="code">console.log(colour)</span> outside of the function will result in an error.</p>
+			
+			<p><span class="code">let sayHello = 'Hi there';<br>
+				const sayGoodbye = 'Goodbye';<br><br>
+				
+				const speakItalian = () => {<br>
+				  sayHello = 'Ciao!';<br>
+				  console.log(sayHello);<br>
+				  console.log(sayGoodbye);<br>
+				};<br><br>
+				speakItalian();</span><br>
+				The value of sayHello is changed to 'Ciao!' within the function. <span class="code">Ciao! Goodbye</span> is printed since Goodbye is an unchanged global variable.</p>
+
+			<h3>Scope pollution</h3>
+			<p><span class="code">let num = 4<br>
+				function number(){<br>
+				  num = 33<br>
+				  console.log(num)<br>
+				}<br>
+				console.log(number())<br>
+				console.log(num)<br></span>
+				In this example, we have two num variables. What is printed? 33 TWICE since the function is overriding the variable. If we printed num BEFORE teh function it would run as intended but the function changes that.</p>
+				<p>When you declare global variables, they go to the global namespace. Scope pollution is when we have too many global variables that exist in the global namespace, or when we reuse variables across different scopes. It becomes difficult to keep track of different variables and has the potential to create accidents. Globally scoped variables can collide with other variables that are more locally scoped, causing unexpected behavior in code.</p>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

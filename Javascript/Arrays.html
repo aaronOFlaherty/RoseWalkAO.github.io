@@ -1,0 +1,122 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+		</style>
+		<script>
+			let arrayTest = [' Elephant', ' Account', ' Keyboard', ' Sandwich', ' Bandana'];
+
+			function show(){
+				alert(arrayTest);
+				console.log(arrayTest)
+			}
+			function reset(){
+				arrayTest = [' Elephant', ' Account', ' Keyboard', ' Sandwich', ' Bandana'];
+				console.log(arrayTest)
+			}
+
+
+			function replaceOne(){
+				arrayTest[0]="Highland Cow";
+				console.log(arrayTest);
+			}
+			function showThird(){
+				alert(arrayTest[2]);
+				console.log(arrayTest[2]);
+			}
+			function length(){
+				alert('The array is ' + arrayTest.length + ' elements long');
+				console.log('The array is ' + arrayTest.length + ' elements long');
+			}
+			function push(){
+				arrayTest.push(' Calendar', ' Shoe');
+				console.log(arrayTest);
+			}
+			function pop(){
+				arrayTest.pop();
+				console.log(arrayTest);
+			}
+			function shift(){
+				arrayTest.shift();
+				console.log(arrayTest);
+			}
+			function unshift(){
+				arrayTest.unshift('Coffee');
+				console.log(arrayTest);
+			}
+			function slice(){
+				alert(arrayTest.slice(1,4));
+				console.log(arrayTest.slice(1,4));
+			}
+			function indexOf(){
+				alert(arrayTest.indexOf(' Sandwich'));
+				console.log(arrayTest.indexOf(' Sandwich'));
+			}
+			function splice(){
+				arrayTest.splice(1,3,' Carrot')
+				console.log(arrayTest)
+			}
+
+
+			let numberClusters = [[1,2], [3,4], [5,6]]
+			function arrayArray(){
+				alert(numberClusters[1][1]) //Targeting array 2, then element 2
+			}
+
+			let animals = [['shark', 'whale', 'octopus'], ['robin', 'seagull', 'pigeon'], ['human', 'cat', 'dog']]
+			function mammals(){
+				alert(animals[2])
+			}
+			function human(){
+				alert(animals[2][0])
+			}
+		</script>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Arrays</h1>
+	</header>
+	<body>
+		<Main>
+			<h2>Simple edits to an array</h2>
+			<p>On this page, we have a variable array with the items: Elephant, Account, Keyboard, Sandwich and Bandana.<br>
+			<span class='code'>let arrayTest = [' Elephant', ' Account', ' Keyboard', ' Sandwich', ' Bandana'];</span></p>
+
+			<input type="submit" value="Show the array" onclick="show()">
+			<input type="submit" value="Reset the array" onclick="reset()">
+			<br><br>
+			<input type="submit" value="Replace the first element" onclick="replaceOne()"><br>
+			<input type="submit" value="Show the third element" onclick="showThird()"><br>
+			<input type="submit" value=".length - How long is the array?" onclick="length()"><br>
+			<input type="submit" value=".push() - Add an element to the array. (Can be repeated... oh no)" onclick="push()"><br>
+			<input type="submit" value=".pop() - Remove the last element" onclick="pop()"><br>
+			<input type="submit" value=".shift() - Remove the first element" onclick="shift()"><br>
+			<input type="submit" value=".unshift() - Add somehing as the first element" onclick="unshift()"><br>
+			<input type="submit" value=".slice() - Display second, third and fourth element" onclick="slice()"><br>
+			<input type="submit" value=".indexOf() - Find the index number for sandwich (if it is still there)" onclick="indexOf()"><br>
+			<input type="submit" value=".splice() - Remove element two & three and replace it" onclick="splice()">
+			
+			<h2>Nesting arrays</h2>
+			<p><span class='code'>let numberClusters = [[1,2], [3,4], [5,6]]</span><br>
+			Here, we can target arrys within arrays. First we target, the outer array (OneTwo, ThreeFour, FiveSix) and then we target the individual within that array.</p>
+			<input type="submit" value="Target 4 within the array" onclick="arrayArray()">
+
+			<p><span class='code'>let animals = [['shark', 'whale', 'octopus'], ['robin', 'seagull', 'pigeon'], ['human', 'cat', 'dog']]</span></p>
+			<input type="submit" value="Target mammals" onclick="mammals()">
+			<input type="submit" value="Target human" onclick="human()">
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

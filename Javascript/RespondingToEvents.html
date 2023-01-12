@@ -1,0 +1,109 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			img{
+				width: 50%;
+			}
+		</style>
+
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Responding to events</h1>
+	</header>
+	<body>
+		<Main>
+			<h2>Detcting the event</h2>
+			<p>Events on a webpage are not created or casued since they happen all the time. It can be as simple as scrolling on a webpage or hovering your mouse over an image. An event listener can handle individual events and allow us to respond to them. There are 3 ways we can respond and the one chosen is ultimately up to the creator's preference.</p>
+			
+			<h3>Option 1 - Writing HS code into HTML</h3>
+			<p>Simple but not widely recommended. It mixes up HTML and JS, it isn't portableand can be confusing.
+			<button onclick="option1()">Click me!</button></p>
+			
+			<div id="option2" onmouseover="option2a()" onmouseout="option2b()">
+				<h3 onclick="this.innerHTML='You found me!'">Option 2 - Specify an element or event and write a function</h3>
+				<p>The element is referenced by a variable and the event is chosen from a list of possible events. In this instance mouseover is the event for this section. Once the onmouseover event occurs, the function is called. In addition to this I have added onmouseout so it reverts to its usual style.</p>
+			</div>
+			
+			<h3 id="option3">Option 3 - Use the addEventListener() function</h3>
+			<p>This option specifies the parameter for the event we want to respond to (excludes the words on and off e.g. onmouseon used above) and at the end True or False. Various event listeners ahve been assigned to this section's title which is a benefit to this option.</p>
+			<script>
+				function option1(){
+					alert("Thank you for inserting JavaScript into the HTML.")
+				}
+
+				function option2a(){
+					document.getElementById("option2").style.color="blue"
+					document.getElementById("option2").style.fontFamily="fantasy"
+				}
+				function option2b(){
+					document.getElementById("option2").style.color="black"
+					document.getElementById("option2").style.fontFamily="calibri"
+				}
+
+				document.getElementById("option3").addEventListener("click", function(){alert("La la la you will never get this!")})
+				document.getElementById("option3").addEventListener("mouseover", function(){alert("Hello World!")})
+				document.getElementById("option3").addEventListener("mouseover", function(){alert("Hello again")})
+
+			</script>
+
+			<h2>The event's response</h2>
+			<p id="mouseOver" onmouseover="mOver(this)" onmouseout="mOut(this)"> When the mouse is over this text, I will change text.</p>
+			<script>
+				function mOver(obj){
+					obj.innerHTML = "Hello World!"
+				}
+				function mOut(obj){
+					obj.innerHTML = "When the mouse is over this text, I will change text."
+				}
+			</script>
+
+			<p id="mouseUp" onmouseup="mUp(this)" onmousedown="mDown(this)">Clicking and holding will change the text. Letting go reverts it.</p>
+			<script>
+				function mDown(obj){
+				obj.innerHTML = "Hello World!"
+			}
+			function mUp(obj){
+				obj.innerHTML = "Clicking and holding will change the text. Letting go reverts it."
+			}
+			</script>		
+
+			<p>You may have received an alert saying "It has been more than five seconds". This is caused by setTimeout. 5 seconds after the page loads, this alert will appear</p>
+			<script>
+				function fiveSeconds(){
+					alert("It has been more than five seconds")
+				}
+				setTimeout(fiveSeconds, 5000); //5000 milliseconds
+			</script>
+
+			<img src="../Media/interval1.png" id="imageInterval">
+			<script>
+				var image = document.getElementById("imageInterval");
+				var imageArray = ["../Media/interval1.png", "../Media/interval2.png", "../Media/interval3.png", "../Media/interval4.png"];
+				var imageIndex = 0;
+				function changeImage() {
+					image.setAttribute("src", imageArray[imageIndex]);
+					imageIndex++;
+					if (imageIndex >= imageArray.length){//Resetting back to the first image once the index is bigger than the length
+						imageIndex = 0; //If this wasn't here, it would increment forever and go above the amount of images i have listed
+					}
+				}
+				setInterval(changeImage, 0300);
+			</script>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

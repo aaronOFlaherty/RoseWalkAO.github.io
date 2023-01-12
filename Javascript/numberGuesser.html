@@ -1,0 +1,106 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+		</style>
+		<script>
+			
+			function easyComputerNumber(){
+				return computerChoice = Math.floor(Math.random() * 3 + 1);
+			}
+			function mediumComputerNumber(){
+				return computerChoice = Math.floor(Math.random() * 5 + 1);
+			}
+			function hardComputerNumber(){
+				return computerChoice = Math.floor(Math.random() * 10 + 1);
+			}
+
+			function playerOne(){
+				return playerChoice = 1;
+			}
+			function playerTwo(){
+				return playerChoice = 2;
+			}
+			function playerThree(){
+				return playerChoice = 3;
+			}
+			function playerFour(){
+				return playerChoice = 4;
+			}
+			function playerFive(){
+				return playerChoice = 5;
+			}
+			function playerSix(){
+				return playerChoice = 6;
+			}
+			function playerSeven(){
+				return playerChoice = 7;
+			}
+			function playerEight(){
+				return playerChoice = 8;
+			}
+			function playerNine(){
+				return playerChoice = 9;
+			}
+			function playerTen(){
+				return playerChoice = 10;
+			}
+			
+			console.log(playerOne())
+			console.log(easyComputerNumber())
+			
+			function roll(){
+			if (playerChoice === computerChoice){
+				alert('CONGRATULATIONS! You picked a random number and got it right. So proud of you...')
+			} else {alert('Loser. You chose ' + playerChoice + '. The computer has chosen ' + computerChoice)
+				}
+			}
+		</script>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>NUMBER GUESSER</h1>
+	</header>
+	<body>
+		<Main>
+			<p>A number has been randomly selected by the computer. Try and guess it to win!</p>
+
+			<h2>Easy - 1 / 3</h2>
+			<input type="submit" value="One" onclick="playerOne(), easyComputerNumber(), roll()">
+			<input type="submit" value="Two" onclick="playerTwo(), easyComputerNumber(), roll()">
+			<input type="submit" value="Three" onclick="playerThree(), easyComputerNumber(), roll()">
+
+			<h2>Medium - 1 / 5</h2>
+			<input type="submit" value="One" onclick="playerOne(), mediumComputerNumber(), roll()">
+			<input type="submit" value="Two" onclick="playerTwo(),mediumComputerNumber(), roll()">
+			<input type="submit" value="Three" onclick="playerThree(), mediumComputerNumber(), roll()">
+			<input type="submit" value="Four" onclick="playerFour(), mediumComputerNumber(), roll()">
+			<input type="submit" value="Five" onclick="playerFive(), mediumComputerNumber(), roll()">
+
+			<h2>Hard - 1 / 10</h2>
+			<input type="submit" value="One" onclick="playerOne(),hardComputerNumber(), roll()">
+			<input type="submit" value="Two" onclick="playerTwo(), hardComputerNumber(), roll()">
+			<input type="submit" value="Three" onclick="playerThree(), hardComputerNumber(), roll()">
+			<input type="submit" value="Four" onclick="playerFour(), hardComputerNumber(), roll()">
+			<input type="submit" value="Five" onclick="playerFive(), hardComputerNumber(), roll()">
+			<input type="submit" value="Six" onclick="playerSix(), hardComputerNumber(), roll()">
+			<input type="submit" value="Seven" onclick="playerSeven(),hardComputerNumber(), roll()">
+			<input type="submit" value="Eight" onclick="playerEight(), hardComputerNumber(), roll()">
+			<input type="submit" value="Nine" onclick="playerNine(), hardComputerNumber(), roll()">
+			<input type="submit" value="Ten" onclick="playerTen(), hardComputerNumber(), roll()">
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>

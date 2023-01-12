@@ -1,0 +1,174 @@
+<!doctype html>
+	<head>
+    	<meta name="viewport" content="width=device-width">
+    	<title>Aaron O'Flaherty</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<style>
+			.box{
+				width: 70px;
+				height: 70px;
+				background-color: mediumseagreen;
+				border: 3px solid black;
+				display: inline-block;
+				margin: 10px;
+			}
+			.container{
+				width:100%;
+				height: 120px;
+				background-color: darkgrey;
+				display: flex;
+				margin: 10px;
+			}
+
+			#fStart {
+				justify-content: flex-start; /*The default value so no change will be seen*/
+			}
+			#fEnd {
+				justify-content: flex-end;
+			}
+			#center {
+				justify-content: center;
+			}
+			#sAround{
+				justify-content: space-around;
+			}
+			#sBetween{
+				justify-content: space-between;
+			}
+
+			.shrinkBox{
+				width: 30%;
+				height: 70px;
+				background-color: mediumseagreen;
+				border: 3px solid black;
+				display: inline-block;
+				margin: 10px;
+				flex-shrink:3;
+			}
+			.growBox{
+				width: 30%;
+				height: 70px;
+				background-color: mediumseagreen;
+				border: 3px solid black;
+				display: inline-block;
+				margin: 10px;
+				flex-grow:3;
+			}
+			.flexBasisBox{
+				width: 30%;
+				height: 70px;
+				background-color: mediumseagreen;
+				border: 3px solid black;
+				display: inline-block;
+				margin: 10px;
+				flex:3 3 70px;
+			}
+			
+			.wrapBox{
+				width: 70px;
+				height: 70px;
+				background-color: mediumseagreen;
+				border: 3px solid black;
+				display: inline-block;
+				margin: 10px;
+			}
+
+			#wrap{
+				flex-wrap:wrap;
+			}
+			#reverseWrap{
+				flex-wrap:wrap-reverse;
+			}
+			#noWrap{
+				flex-wrap:nowrap;
+			}
+		</style>
+	</head>
+	<header>
+		<nav>
+			<a href="../Welcome.html">Home</a><br>
+			<a href="../About_me.html">About me</a><br>
+			<a href="../Contact.html">Contact</a><br>
+			<a href="../Cheat_index.html">Cheat sheet</a><br>
+		</nav>
+		<h1>Flexbox</h1>
+	</header>
+	<body>
+		<h2>Spacing</h2>
+		<p>By giving the main element of this page a property of display and value of flex, all child elements (in this case divs) will move on top of each other as long as there is space to do so. This allows a flexible layout for the child elements.</p>
+
+		<p>These examples use a justify-content property to control the horizontal spacing and vertical spacing can be achieved by using the align-items property.</p>
+
+		<p>Changing the side of the window will also shring and expand (up to its size property)</p>
+
+		<Main>
+			<h3>Flex Start</h3>
+			<div id="fStart" class="container">
+				<div class="box"></div><div class="box"></div><div class="box"></div>
+			</div>
+
+			<h3>Flex End</h3>
+			<div id="fEnd" class="container">
+				<div class="box"></div><div class="box"></div><div class="box"></div>
+			</div>
+
+			<h3>Centre<h3>
+			<div id="center" class="container">
+				<div class="box"></div><div class="box"></div><div class="box"></div>
+			</div>
+			
+			<h3>Space Around</h3>
+			<div id="sAround" class="container">
+				<div class="box"></div><div class="box"></div><div class="box"></div>
+			</div>
+
+			<h3>Space Between</h3>
+			<div id="sBetween" class="container">
+				<div class="box"></div><div class="box"></div><div class="box"></div>
+			</div>
+
+			<h2>Growing and shrinking</h2>
+			<p>By using flex-shrink, the middle bos will shrink three times as much as usual to make space. The standard value is 1.</p>
+			<div id="shrink" class="container">
+				<div class="box"></div><div class="shrinkBox"></div><div class="box"></div>
+			</div>
+
+			<p>And the oppostie to above, the middle box here will grow three times as much to take up space.</p>
+			<div id="grow" class="container">
+				<div class="box"></div><div class="growBox"></div><div class="box"></div>
+			</div>
+
+			<h2>Flex-basis</h2>
+			<p>The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing</p>
+			<div id="flex" class="container">
+				<div class="box"></div><div class="flexBasisBox"></div><div class="box"></div>
+			</div>
+			<p>This section's flex styling has been written shorthanded. Check the CSS at the top.</p>
+
+			<h2>Wrap</h2>
+			<h3>Wrap</h3>
+			<p>Child elements of a flex container that don’t fit into a row will move down to the next line</p>
+			<div id="wrap" class="container">
+				<div class="wrapBox">1</div><div class="wrapBox">2</div><div class="wrapBox">3</div><div class="wrapBox">4</div><div class="wrapBox">5</div>
+			</div>
+
+			<h3>Wrap reverse</h3>
+			<p>The same functionality as wrap, but the order of rows within a flex container is reversed</p>
+			<div id="reverseWrap" class="container">
+				<div class="wrapBox">1</div><div class="wrapBox">2</div><div class="wrapBox">3</div><div class="wrapBox">4</div><div class="wrapBox">5</div>
+			</div>
+
+			<h3>No wrap</h3>
+			<p>Prevents items from wrapping. This is the default value and only cancels out wrapping.</p>
+			<div id="nowrap" class="container">
+				<div class="wrapBox"></div><div class="wrapBox"></div><div class="wrapBox"></div><div class="wrapBox"></div><div class="wrapBox"></div>
+			</div>
+		</Main>
+	</body>
+	<footer>
+		<a href="mailto:aaronoflaherty1@gmail.com">aaronoflaherty1@gmail.com</a><br>
+		<p>Phone number: <a href= "tel:07914442602">0791 444 2602</a></p>
+		<p>An Aaron O'Flaherty production - Copyright Me 2020 &reg; <i class="fa fa-copyright" aria-hidden="true"></i></p>
+	</footer>
+</html>
